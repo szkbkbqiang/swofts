@@ -1,0 +1,16 @@
+[2019-05-07 12:35:30 *27440.0]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-05-07 12:35:30 ^27439.1]	WARNING	swSignal_callback (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-05-07 12:35:30 $27437.0]	WARNING	swSignal_callback (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-05-07 12:35:30 #27436.1]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-05-07 12:35:30 $27437.0]	WARNING	swManager_check_exit_status: worker#2[pid=27441] abnormal exit, status=0, signal=1
+[2019-05-08 06:23:44 *27440.0]	NOTICE	swFactoryProcess_finish (ERRNO 1004): send 329 byte failed, because connection[fd=154] is closed
+[2019-05-08 06:25:55 #27436.1]	INFO	Server is shutdown now
+[2019-05-08 13:16:36 *13991.0]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-05-08 13:16:36 *13991.0]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-05-08 13:16:36 ^13990.1]	WARNING	swSignal_callback (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-05-08 13:16:36 ^13990.1]	WARNING	swSignal_callback (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-05-08 13:16:36 $13988.0]	WARNING	swSignal_callback (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-05-08 13:16:36 $13988.0]	WARNING	swSignal_callback (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-05-08 13:16:36 #13987.1]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-05-08 13:16:36 #13987.1]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-05-08 13:16:36 $13988.0]	WARNING	swManager_check_exit_status: worker#2[pid=13992] abnormal exit, status=0, signal=1
