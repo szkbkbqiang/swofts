@@ -10,6 +10,7 @@
 
 namespace App\Models\Dao;
 
+use App\Models\Entity\User;
 use Swoft\Bean\Annotation\Bean;
 
 /**
@@ -25,9 +26,7 @@ class UserDao
 {
     public function getUserInfo()
     {
-        return [
-            'uid' => 666,
-            'name' => 'stelin'
-        ];
+        $result = User::findAll([['username', 'like', '%张%']], ['orderby' => ['id' => 'DESC'], 'limit' => 10])->getResult();
+        return $result;
     }
 }

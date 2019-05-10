@@ -24,10 +24,6 @@ use Swoft\Db\Types;
  * @Entity()
  * @Table(name="user")
  * @uses      User
- * @version   2017年08月23日
- * @author    stelin <phpcrazy@126.com>
- * @copyright Copyright 2010-2016 Swoft software
- * @license   PHP Version 7.x {@link http://www.php.net/license/3_0.txt}
  */
 class User extends Model
 {
@@ -41,37 +37,44 @@ class User extends Model
     private $id;
 
     /**
-     * 名称
+     * 姓名
      *
-     * @Column(name="name", type=Types::STRING, length=20)
+     * @Column(name="username", type=Types::STRING, length=32)
      * @Required()
      * @var null|string
      */
-    private $name;
+    private $username;
 
     /**
-     * 年龄
+     * 手机号
      *
-     * @Column(name="age", type=Types::INT)
+     * @Column(name="phone", type=Types::INT)
      * @var int
      */
-    private $age = 0;
+    private $phone = 0;
 
     /**
-     * 性别
+     * 积分
      *
-     * @Column(name="sex", type="int")
+     * @Column(name="goal", type=Types::INT)
      * @var int
      */
-    private $sex = 0;
+    private $goal = 0;
 
     /**
-     * 描述
+     * 地址
      *
-     * @Column(name="description", type="string")
+     * @Column(name="address", type=Types::STRING, length=128)
      * @var string
      */
-    private $desc = '';
+    private $address = '';
+
+    /**
+     * 生日
+     *
+     * @Column(name="birthday", type=Types::INT)
+     */
+    private $birthday;
 
     /**
      * 非数据库字段，未定义映射关系
@@ -101,7 +104,7 @@ class User extends Model
      */
     public function getName()
     {
-        return $this->name;
+        return $this->username;
     }
 
     /**
@@ -109,55 +112,71 @@ class User extends Model
      */
     public function setName($name)
     {
-        $this->name = $name;
+        $this->username = $name;
     }
 
     /**
      * @return int
      */
-    public function getAge(): int
+    public function getPhone(): int
     {
-        return $this->age;
+        return $this->phone;
     }
 
     /**
-     * @param int $age
+     * @param int $phone
      */
-    public function setAge(int $age)
+    public function setPhone(int $phone)
     {
-        $this->age = $age;
+        $this->phone = $phone;
     }
 
     /**
      * @return int
      */
-    public function getSex(): int
+    public function getGoal(): int
     {
-        return $this->sex;
+        return $this->goal;
     }
 
     /**
-     * @param int $sex
+     * @param int $goal
      */
-    public function setSex(int $sex)
+    public function setGoal(int $goal)
     {
-        $this->sex = $sex;
+        $this->goal = $goal;
     }
 
     /**
      * @return string
      */
-    public function getDesc(): string
+    public function getAddress(): string
     {
-        return $this->desc;
+        return $this->address;
     }
 
     /**
-     * @param string $desc
+     * @param string $address
      */
-    public function setDesc(string $desc)
+    public function setAddress(string $address)
     {
-        $this->desc = $desc;
+        $this->address = $address;
+    }
+
+    /**
+     * @return int
+     */
+    public function getBirthday(): int
+    {
+        return $this->birthday;
+    }
+
+    /**
+     * @param int $birthday
+     */
+    public function setBirthday(int $birthday)
+    {
+        $this->birthday = $birthday;
     }
 
     /**

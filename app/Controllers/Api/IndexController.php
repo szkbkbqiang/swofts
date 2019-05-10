@@ -8,6 +8,7 @@ namespace App\Controllers\Api;
 
 
 use App\Bean\Containers;
+use App\Models\Data\UserData;
 use Swoft\App;
 use Swoft\Bean\Annotation\Inject;
 use Swoft\Http\Server\Bean\Annotation\Controller;
@@ -42,5 +43,19 @@ class IndexController
     {
         $this->container->setName("MicleFengZss");
         return $this->container->getName();
+    }
+
+    /**
+     * @Inject()
+     * @var UserData
+     */
+    private $userData;
+
+    /**
+     * @RequestMapping(route="user")
+     */
+    public function getUser()
+    {
+        return $this->userData->getUserInfo();
     }
 }

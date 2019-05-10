@@ -15,12 +15,8 @@ use Swoft\Bean\Annotation\Bean;
  */
 class Containers
 {
-    private $name;
 
-    public function __construct()
-    {
-        echo "Container\n";
-    }
+    private $name;
 
     public function setName(string $value)
     {
