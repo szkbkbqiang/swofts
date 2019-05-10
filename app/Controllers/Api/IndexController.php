@@ -8,7 +8,7 @@ namespace App\Controllers\Api;
 
 
 use App\Bean\Containers;
-use App\Models\Data\UserData;
+use App\Models\Logic\UserLogic;
 use Swoft\App;
 use Swoft\Bean\Annotation\Inject;
 use Swoft\Http\Server\Bean\Annotation\Controller;
@@ -47,7 +47,7 @@ class IndexController
 
     /**
      * @Inject()
-     * @var UserData
+     * @var UserLogic
      */
     private $userData;
 
@@ -56,6 +56,6 @@ class IndexController
      */
     public function getUser()
     {
-        return $this->userData->getUserInfo();
+        return $this->userData->getUserInfo([148, 144]);
     }
 }

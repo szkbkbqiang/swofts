@@ -10,7 +10,9 @@
 
 namespace App\Models\Logic;
 
+use App\Models\Data\UserData;
 use Swoft\Bean\Annotation\Bean;
+use Swoft\Bean\Annotation\Inject;
 use Swoft\Rpc\Client\Bean\Annotation\Reference;
 
 /**
@@ -40,6 +42,12 @@ class UserLogic
      */
     private $demoServiceV2;
 
+    /**
+     * @Inject()
+     * @var UserData
+     */
+    private $userService;
+
     public function rpcCall()
     {
         return ['bean', $this->demoService->getUser('12'), $this->demoServiceV2->getUser('16')];
@@ -57,7 +65,7 @@ class UserLogic
             $user['uid'] = $uid;
             $data[] = $user;
         }
-
+        $data = $this->userService->getUserInfo();
         return $data;
     }
 }

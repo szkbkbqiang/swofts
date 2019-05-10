@@ -86,7 +86,7 @@ class User extends Model
     /**
      * @return int|null
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
@@ -94,7 +94,7 @@ class User extends Model
     /**
      * @param int|null $id
      */
-    public function setId($id)
+    public function setId(int $id)
     {
         $this->id = $id;
     }
@@ -102,7 +102,7 @@ class User extends Model
     /**
      * @return null|string
      */
-    public function getName()
+    public function getUsername(): string
     {
         return $this->username;
     }
@@ -110,7 +110,7 @@ class User extends Model
     /**
      * @param null|string $name
      */
-    public function setName($name)
+    public function setUsername(string $name)
     {
         $this->username = $name;
     }
