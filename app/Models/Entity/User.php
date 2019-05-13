@@ -1,26 +1,15 @@
 <?php
-/**
- * This file is part of Swoft.
- *
- * @link https://swoft.org
- * @document https://doc.swoft.org
- * @contact group@swoft.org
- * @license https://github.com/swoft-cloud/swoft/blob/master/LICENSE
- */
-
 namespace App\Models\Entity;
 
+use Swoft\Db\Model;
+use Swoft\Db\Bean\Annotation\Column;
+use Swoft\Db\Bean\Annotation\Entity;
 use Swoft\Db\Bean\Annotation\Id;
 use Swoft\Db\Bean\Annotation\Required;
 use Swoft\Db\Bean\Annotation\Table;
-use Swoft\Db\Bean\Annotation\Column;
-use Swoft\Db\Bean\Annotation\Entity;
-use Swoft\Db\Model;
 use Swoft\Db\Types;
 
 /**
- * 用户实体
- *
  * @Entity()
  * @Table(name="user")
  * @uses      User
@@ -28,170 +17,156 @@ use Swoft\Db\Types;
 class User extends Model
 {
     /**
-     * 主键ID
-     *
+     * @var int $id 
      * @Id()
-     * @Column(name="id", type=Types::INT)
-     * @var null|int
+     * @Column(name="id", type="integer")
      */
     private $id;
 
     /**
-     * 姓名
-     *
-     * @Column(name="username", type=Types::STRING, length=32)
-     * @Required()
-     * @var null|string
+     * @var string $username 
+     * @Column(name="username", type="string", length=32)
      */
     private $username;
 
     /**
-     * 手机号
-     *
-     * @Column(name="phone", type=Types::INT)
-     * @var int
+     * @var string $phone 
+     * @Column(name="phone", type="char", length=11)
+     * @Required()
      */
-    private $phone = 0;
+    private $phone;
 
     /**
-     * 积分
-     *
-     * @Column(name="goal", type=Types::INT)
-     * @var int
+     * @var int $goal 
+     * @Column(name="goal", type="integer")
+     * @Required()
      */
-    private $goal = 0;
+    private $goal;
 
     /**
-     * 地址
-     *
-     * @Column(name="address", type=Types::STRING, length=128)
-     * @var string
+     * @var string $address 
+     * @Column(name="address", type="string", length=128)
      */
-    private $address = '';
+    private $address;
 
     /**
-     * 生日
-     *
-     * @Column(name="birthday", type=Types::INT)
+     * @var int $birthday 
+     * @Column(name="birthday", type="integer")
      */
     private $birthday;
 
     /**
-     * 非数据库字段，未定义映射关系
-     *
-     * @var mixed
+     * @param int $value
+     * @return $this
      */
-    private $otherProperty;
-
-    /**
-     * @return int|null
-     */
-    public function getId(): int
+    public function setId(int $value)
     {
-        return $this->id;
+        $this->id = $value;
+
+        return $this;
     }
 
     /**
-     * @param int|null $id
+     * @param string $value
+     * @return $this
      */
-    public function setId(int $id)
+    public function setUsername(string $value): self
     {
-        $this->id = $id;
+        $this->username = $value;
+
+        return $this;
     }
 
     /**
-     * @return null|string
+     * @param string $value
+     * @return $this
      */
-    public function getUsername(): string
+    public function setPhone(string $value): self
     {
-        return $this->username;
+        $this->phone = $value;
+
+        return $this;
     }
 
     /**
-     * @param null|string $name
+     * @param int $value
+     * @return $this
      */
-    public function setUsername(string $name)
+    public function setGoal(int $value): self
     {
-        $this->username = $name;
+        $this->goal = $value;
+
+        return $this;
     }
 
     /**
-     * @return int
+     * @param string $value
+     * @return $this
      */
-    public function getPhone(): int
+    public function setAddress(string $value): self
     {
-        return $this->phone;
+        $this->address = $value;
+
+        return $this;
     }
 
     /**
-     * @param int $phone
+     * @param int $value
+     * @return $this
      */
-    public function setPhone(int $phone)
+    public function setBirthday(int $value): self
     {
-        $this->phone = $phone;
-    }
+        $this->birthday = $value;
 
-    /**
-     * @return int
-     */
-    public function getGoal(): int
-    {
-        return $this->goal;
-    }
-
-    /**
-     * @param int $goal
-     */
-    public function setGoal(int $goal)
-    {
-        $this->goal = $goal;
-    }
-
-    /**
-     * @return string
-     */
-    public function getAddress(): string
-    {
-        return $this->address;
-    }
-
-    /**
-     * @param string $address
-     */
-    public function setAddress(string $address)
-    {
-        $this->address = $address;
-    }
-
-    /**
-     * @return int
-     */
-    public function getBirthday(): int
-    {
-        return $this->birthday;
-    }
-
-    /**
-     * @param int $birthday
-     */
-    public function setBirthday(int $birthday)
-    {
-        $this->birthday = $birthday;
+        return $this;
     }
 
     /**
      * @return mixed
      */
-    public function getOtherProperty()
+    public function getId()
     {
-        return $this->otherProperty;
+        return $this->id;
     }
 
     /**
-     * @param mixed $otherProperty
+     * @return string
      */
-    public function setOtherProperty($otherProperty)
+    public function getUsername()
     {
-        $this->otherProperty = $otherProperty;
+        return $this->username;
     }
+
+    /**
+     * @return string
+     */
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
+    /**
+     * @return int
+     */
+    public function getGoal()
+    {
+        return $this->goal;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAddress()
+    {
+        return $this->address;
+    }
+
+    /**
+     * @return int
+     */
+    public function getBirthday()
+    {
+        return $this->birthday;
+    }
+
 }
