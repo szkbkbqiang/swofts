@@ -11,6 +11,7 @@ use App\Bean\Containers;
 use App\Models\Logic\UserLogic;
 use Swoft\App;
 use Swoft\Bean\Annotation\Inject;
+use Swoft\Http\Message\Server\Response;
 use Swoft\Http\Server\Bean\Annotation\Controller;
 use Swoft\Http\Server\Bean\Annotation\RequestMapping;
 
@@ -53,15 +54,18 @@ class IndexController
 
     /**
      * @RequestMapping(route="user")
+     * @param Response $response
+     * @return Response
      * @throws \Swoft\Exception\ValidatorException
      */
-    public function getUser()
+    public function getUser(Response $response)
     {
         $data = [
             'name' => 'miclefengzss',
-            'age' => 0,
+            'age' => 1,
             'email' => 'miclefengzss@gmail.com',
         ];
         $this->userLogic->validate($data);
+        return $response->json($data);
     }
 }
