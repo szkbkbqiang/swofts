@@ -10,10 +10,10 @@
 
 namespace App\Models\Logic;
 
-use App\Models\Data\UserData;
+use App\Models\Validates\UserValidate;
 use Swoft\Bean\Annotation\Bean;
 use Swoft\Bean\Annotation\Inject;
-use Swoft\Rpc\Client\Bean\Annotation\Reference;
+use Swoft\Exception\ValidatorException;
 
 /**
  * 用户逻辑层
@@ -28,44 +28,21 @@ use Swoft\Rpc\Client\Bean\Annotation\Reference;
  */
 class UserLogic
 {
-    /**
-     * @Reference("user")
-     *
-     * @var \App\Lib\DemoInterface
-     */
-    private $demoService;
-
-    /**
-     * @Reference(name="user", version="1.0.1")
-     *
-     * @var \App\Lib\DemoInterface
-     */
-    private $demoServiceV2;
 
     /**
      * @Inject()
-     * @var UserData
+     * @var UserValidate
      */
-    private $userService;
+   private $userValidate;
 
-    public function rpcCall()
+    /**
+     * @param array $data
+     * @throws ValidatorException
+     */
+    public function create(array $data)
     {
-        return ['bean', $this->demoService->getUser('12'), $this->demoServiceV2->getUser('16')];
-    }
-
-    public function getUserInfo(array $uids)
-    {
-        $user = [
-            'name' => 'boby',
-            'desc' => 'this is boby'
-        ];
-
-        $data = [];
-        foreach ($uids as $uid) {
-            $user['uid'] = $uid;
-            $data[] = $user;
+        if (!$this->userValidate->scene('create')->check($data)) {
+            throw new ValidatorException($this->userValidate->getError());
         }
-        $data = $this->userService->getUserInfo();
-        return $data;
     }
 }

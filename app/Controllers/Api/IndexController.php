@@ -10,6 +10,7 @@ namespace App\Controllers\Api;
 use App\Bean\Containers;
 use App\Models\Logic\UserLogic;
 use App\Models\Validates\UserValidate;
+use phpDocumentor\Reflection\DocBlock\Tags\Uses;
 use Swoft\App;
 use Swoft\Bean\Annotation\Inject;
 use Swoft\Http\Server\Bean\Annotation\Controller;
@@ -50,27 +51,19 @@ class IndexController
      * @Inject()
      * @var UserLogic
      */
-    private $userData;
-
-    /**
-     * @Inject()
-     * @var UserValidate
-     */
-    private $userValidate;
+    private $userLogic;
 
     /**
      * @RequestMapping(route="user")
+     * @throws \Swoft\Exception\ValidatorException
      */
     public function getUser()
     {
         $data = [
             'name' => 'miclefengzss',
-            'age' => 27,
+            'age' => 0,
             'email' => 'miclefengzss@gmail.com',
         ];
-        if (!$this->userValidate->scene('create')->check($data)) {
-            return $this->userValidate->getError();
-        }
-        return $this->userData->getUserInfo([148, 144]);
+        $this->userLogic->create($data);
     }
 }
