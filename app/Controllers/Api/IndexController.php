@@ -58,7 +58,7 @@ class IndexController
      * @return Response
      * @throws \Swoft\Exception\ValidatorException
      */
-    public function getUser(Response $response)
+    public function getUser(Response $response): Response
     {
         $data = [
             'name' => 'miclefengzss',
