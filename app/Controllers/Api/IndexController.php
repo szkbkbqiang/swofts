@@ -64,6 +64,6 @@ class IndexController
             'age' => 0,
             'email' => 'miclefengzss@gmail.com',
         ];
-        $this->userLogic->create($data);
+        $this->userLogic->validate($data);
     }
 }

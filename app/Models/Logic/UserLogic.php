@@ -39,7 +39,7 @@ class UserLogic
      * @param array $data
      * @throws ValidatorException
      */
-    public function create(array $data)
+    public function validate(array $data)
     {
         if (!$this->userValidate->scene('create')->check($data)) {
             throw new ValidatorException($this->userValidate->getError());
