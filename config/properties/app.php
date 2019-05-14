@@ -9,12 +9,13 @@
 
 return [
     'env' => env('APP_ENV', 'test'),
-    'debug' => env('APP_DEBUG', false),
+    'debug' => env('APP_DEBUG', true),
     'version' => '1.0',
     'autoInitBean' => true,
     'bootScan' => [
         'App\Commands',
         'App\Boot',
+        'App\Exception',
     ],
     'excludeScan' => [
         'App\Helper',
