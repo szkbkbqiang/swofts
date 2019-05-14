@@ -9,8 +9,6 @@ namespace App\Controllers\Api;
 
 use App\Bean\Containers;
 use App\Models\Logic\UserLogic;
-use App\Models\Validates\UserValidate;
-use phpDocumentor\Reflection\DocBlock\Tags\Uses;
 use Swoft\App;
 use Swoft\Bean\Annotation\Inject;
 use Swoft\Http\Server\Bean\Annotation\Controller;
