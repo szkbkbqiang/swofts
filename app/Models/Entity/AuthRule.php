@@ -26,7 +26,7 @@ class AuthRule extends Model
     private $id;
 
     /**
-     * @var string $name 规则唯一标识 列如：Admin/User/index 模块/控制器/方法
+     * @var string $name 规则唯一标识 列如：Admin/user/index 模块/控制器/方法
      * @Column(name="name", type="string", length=32, default="")
      */
     private $name;
@@ -67,7 +67,7 @@ class AuthRule extends Model
     }
 
     /**
-     * 规则唯一标识 列如：Admin/User/index 模块/控制器/方法
+     * 规则唯一标识 列如：Admin/user/index 模块/控制器/方法
      * @param string $value
      * @return $this
      */
@@ -134,7 +134,7 @@ class AuthRule extends Model
     }
 
     /**
-     * 规则唯一标识 列如：Admin/User/index 模块/控制器/方法
+     * 规则唯一标识 列如：Admin/user/index 模块/控制器/方法
      * @return string
      */
     public function getName()

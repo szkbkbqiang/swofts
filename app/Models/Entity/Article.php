@@ -56,8 +56,8 @@ class Article extends Model
     private $keywords;
 
     /**
-     * @var string $img 文章图片路径
-     * @Column(name="img", type="string", length=128, default="")
+     * @var string $images 文章图片路径
+     * @Column(name="images", type="string", length=128, default="")
      */
     private $img;
 

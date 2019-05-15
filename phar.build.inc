@@ -2,7 +2,7 @@
 /**
  * Created by PhpStorm.
  * - the is a config file for compile phar package.
- * User: Inhere
+ * user: Inhere
  * Date: 2018/1/26 0026
  * Time: 22:11
  * @var \Swoft\Devtool\PharCompiler $compiler

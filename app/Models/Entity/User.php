@@ -76,7 +76,7 @@ class User extends Model
     private $signature;
 
     /**
-     * @var int $userType 1:admin 2:普通会员
+     * @var int $userType 1:backend 2:普通会员
      * @Column(name="user_type", type="tinyint", default=2)
      */
     private $userType;
@@ -225,7 +225,7 @@ class User extends Model
     }
 
     /**
-     * 1:admin 2:普通会员
+     * 1:backend 2:普通会员
      * @param int $value
      * @return $this
      */
@@ -389,7 +389,7 @@ class User extends Model
     }
 
     /**
-     * 1:admin 2:普通会员
+     * 1:backend 2:普通会员
      * @return mixed
      */
     public function getUserType()

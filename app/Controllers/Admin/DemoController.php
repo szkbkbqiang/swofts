@@ -25,7 +25,7 @@ use Swoft\View\Bean\Annotation\View;
 /**
  * 控制器demo.
  *
- * @Controller(prefix="/admin/demo2")
+ * @Controller(prefix="/backend/demo2")
  */
 class DemoController
 {

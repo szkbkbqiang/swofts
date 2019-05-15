@@ -1,6 +1,6 @@
 <?php
 /**
- * User: zhang.shangshang@tslsmart.com
+ * user: zhang.shangshang@tslsmart.com
  * Date: 2019/5/10 上午9:00
  */
 
@@ -29,21 +29,6 @@ class IndexController
         $container = App::getBean(Containers::class);
         $container->setName("MicleFeng");
         return $container->getName();
-    }
-
-    /**
-     * @Inject()
-     * @var Containers
-     */
-    private $container;
-
-    /**
-     * @RequestMapping(route="bean1")
-     */
-    public function getBean()
-    {
-        $this->container->setName("MicleFengZss");
-        return $this->container->getName();
     }
 
     /**
