@@ -59,25 +59,7 @@ class IndexController
      */
     public function produceKafka(Response $response): Response
     {
-        date_default_timezone_set('PRC');
-        $config = \Kafka\ProducerConfig::getInstance();
-        $config->setMetadataRefreshIntervalMs(10000);
-        $config->setMetadataBrokerList('127.0.0.1:9092');
-        $config->setBrokerVersion('1.0.0');
-        $config->setRequiredAck(1);
-        $config->setIsAsyn(false);
-        $config->setProduceInterval(500);
-        $producer = new \Kafka\Producer();
 
-        for($i = 0; $i < 2; $i++) {
-            $producer->send([
-                [
-                    'topic' => 'test1',
-                    'value' => 'test1....message.',
-                    'key' => '',
-                ],
-            ]);
-        }
         return $response->json('');
     }
 
@@ -86,17 +68,7 @@ class IndexController
      */
     public function consumeKafka(Response $response): Response
     {
-        $config = \Kafka\ConsumerConfig::getInstance();
-        $config->setMetadataRefreshIntervalMs(10000);
-        $config->setMetadataBrokerList('127.0.0.1:9092');
-        $config->setGroupId('test');
-        $config->setBrokerVersion('1.0.0');
-        $config->setTopics(['test']);
 
-        $consumer = new \Kafka\Consumer();
-        $consumer->start(function($topic, $part, $message) {
-            var_dump($message);
-        });
-        return $response->json($data);
+        return $response->json('');
     }
 }
