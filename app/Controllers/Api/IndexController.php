@@ -53,4 +53,56 @@ class IndexController
         $this->userLogic->validate($data);
         return $response->json($data);
     }
+
+    /**
+     * @RequestMapping(route="produceKafka")
+     */
+    public function produceKafka(Response $response): Response
+    {
+        date_default_timezone_set('PRC');
+        $config = \Kafka\ProducerConfig::getInstance();
+        $config->setMetadataRefreshIntervalMs(10000);
+        $config->setMetadataBrokerList('127.0.0.1:9092');
+        $config->setBrokerVersion('1.0.0');
+        $config->setRequiredAck(1);
+        $config->setIsAsyn(false);
+        $config->setProduceInterval(500);
+        $producer = new \Kafka\Producer(
+            function() {
+                return [
+                    [
+                        'topic' => 'test',
+                        'value' => 'test....message.',
+                        'key' => 'testkey',
+                    ],
+                ];
+            }
+        );
+
+        $producer->success(function($result) {
+            var_dump($result);
+        });
+        $producer->error(function($errorCode) {
+            var_dump($errorCode);
+        });
+        $producer->send(true);
+    }
+
+    /**
+     * @RequestMapping(route="consumeKafka")
+     */
+    public function consumeKafka()
+    {
+        $config = \Kafka\ConsumerConfig::getInstance();
+        $config->setMetadataRefreshIntervalMs(10000);
+        $config->setMetadataBrokerList('127.0.0.1:9092');
+        $config->setGroupId('test');
+        $config->setBrokerVersion('1.0.0');
+        $config->setTopics(['test']);
+
+        $consumer = new \Kafka\Consumer();
+        $consumer->start(function($topic, $part, $message) {
+            var_dump($message);
+        });
+    }
 }
