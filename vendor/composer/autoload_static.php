@@ -19,6 +19,7 @@ class ComposerStaticInit249db7b354470925bd8287d14b0d734a
         'c75dc18f90019567f351c574f8e16e7f' => __DIR__ . '/..' . '/swoft/service-governance/src/Helper/Functions.php',
         '0bdbd081a332e921d63969714c2039f5' => __DIR__ . '/..' . '/swoft/process/src/Helper/Functions.php',
         '30ef5a432812e53e35293749d21015ac' => __DIR__ . '/..' . '/swoft/redis/src/Helper/Functions.php',
+        'e8aa6e4b5a1db2f56ae794f1505391a8' => __DIR__ . '/..' . '/amphp/amp/lib/functions.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '3ec4e28b2d7ec76d44271b44c2949657' => __DIR__ . '/..' . '/swoft/rpc/src/Helper/Functions.php',
         '0f7264010dfe4b150414d6c16fc2a53e' => __DIR__ . '/..' . '/swoft/task/src/Helper/Functions.php',
@@ -133,6 +134,7 @@ class ComposerStaticInit249db7b354470925bd8287d14b0d734a
         'A' => 
         array (
             'App\\' => 4,
+            'Amp\\' => 4,
         ),
     );
 
@@ -392,6 +394,10 @@ class ComposerStaticInit249db7b354470925bd8287d14b0d734a
         array (
             0 => __DIR__ . '/../..' . '/app',
         ),
+        'Amp\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/amphp/amp/lib',
+        ),
     );
 
     public static $fallbackDirsPsr4 = array (
@@ -404,6 +410,13 @@ class ComposerStaticInit249db7b354470925bd8287d14b0d734a
             'Prophecy\\' => 
             array (
                 0 => __DIR__ . '/..' . '/phpspec/prophecy/src',
+            ),
+        ),
+        'K' => 
+        array (
+            'Kafka\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/nmred/kafka-php/src',
             ),
         ),
         'D' => 

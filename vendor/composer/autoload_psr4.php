@@ -69,5 +69,6 @@ return array(
     'Composer\\XdebugHandler\\' => array($vendorDir . '/composer/xdebug-handler/src'),
     'Composer\\Semver\\' => array($vendorDir . '/composer/semver/src'),
     'App\\' => array($baseDir . '/app'),
+    'Amp\\' => array($vendorDir . '/amphp/amp/lib'),
     '' => array($vendorDir . '/nesbot/carbon/src'),
 );

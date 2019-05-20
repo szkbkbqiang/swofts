@@ -18,6 +18,7 @@ return array(
     'c75dc18f90019567f351c574f8e16e7f' => $vendorDir . '/swoft/service-governance/src/Helper/Functions.php',
     '0bdbd081a332e921d63969714c2039f5' => $vendorDir . '/swoft/process/src/Helper/Functions.php',
     '30ef5a432812e53e35293749d21015ac' => $vendorDir . '/swoft/redis/src/Helper/Functions.php',
+    'e8aa6e4b5a1db2f56ae794f1505391a8' => $vendorDir . '/amphp/amp/lib/functions.php',
     '6124b4c8570aa390c21fafd04a26c69f' => $vendorDir . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
     '3ec4e28b2d7ec76d44271b44c2949657' => $vendorDir . '/swoft/rpc/src/Helper/Functions.php',
     '0f7264010dfe4b150414d6c16fc2a53e' => $vendorDir . '/swoft/task/src/Helper/Functions.php',
