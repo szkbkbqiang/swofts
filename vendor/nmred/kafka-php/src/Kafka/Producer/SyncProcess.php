@@ -54,7 +54,7 @@ class SyncProcess
         $broker = \Kafka\Broker::getInstance();
         $requiredAck = \Kafka\ProducerConfig::getInstance()->getRequiredAck();
         $timeout = \Kafka\ProducerConfig::getInstance()->getTimeout();
-
+        var_dump($data);
         // get send message
         // data struct
         //  topic:
@@ -168,7 +168,7 @@ class SyncProcess
             } else {
                 $partId = $value['partId'];
             }
-
+            var_dump($topicInfos, $topicMeta);
             $brokerId = $topicMeta[$partId];
             $topicData = array();
             if (isset($sendData[$brokerId][$value['topic']])) {

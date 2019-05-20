@@ -67,25 +67,17 @@ class IndexController
         $config->setRequiredAck(1);
         $config->setIsAsyn(false);
         $config->setProduceInterval(500);
-        $producer = new \Kafka\Producer(
-            function() {
-                return [
-                    [
-                        'topic' => 'test',
-                        'value' => 'test....message.',
-                        'key' => 'testkey',
-                    ],
-                ];
-            }
-        );
+        $producer = new \Kafka\Producer();
 
-        $producer->success(function($result) {
-            var_dump($result, 111);
-        });
-        $producer->error(function($errorCode) {
-            var_dump($errorCode . "---222");
-        });
-        $producer->send(true);
+        for($i = 0; $i < 100; $i++) {
+            $producer->send([
+                [
+                    'topic' => 'test1',
+                    'value' => 'test1....message.',
+                    'key' => '',
+                ],
+            ]);
+        }
         return $response->json('');
     }
 

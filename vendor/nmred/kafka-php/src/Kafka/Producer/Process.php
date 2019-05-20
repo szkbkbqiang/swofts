@@ -293,7 +293,6 @@ class Process
     {
         $retry = false;
         $this->error(\Kafka\Protocol::getError($errorCode));
-        var_dump($errorCode, $this->error);
         if ($this->error) {
             call_user_func($this->error, $errorCode);
         }
@@ -354,7 +353,6 @@ class Process
                 $partId = $value['partId'];
             }
 
-            var_dump($topicInfos, $topicMeta, $partNums);
             $brokerId = $topicMeta[$partId];
             $topicData = array();
             if (isset($sendData[$brokerId][$value['topic']])) {
