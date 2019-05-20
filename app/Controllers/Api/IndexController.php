@@ -69,7 +69,7 @@ class IndexController
         $config->setProduceInterval(500);
         $producer = new \Kafka\Producer();
 
-        for($i = 0; $i < 100; $i++) {
+        for($i = 0; $i < 2; $i++) {
             $producer->send([
                 [
                     'topic' => 'test1',
