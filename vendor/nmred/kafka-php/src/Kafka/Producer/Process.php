@@ -293,6 +293,7 @@ class Process
     {
         $retry = false;
         $this->error(\Kafka\Protocol::getError($errorCode));
+        var_dump($errorCode, $this->error);
         if ($this->error) {
             call_user_func($this->error, $errorCode);
         }
