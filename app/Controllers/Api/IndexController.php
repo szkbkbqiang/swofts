@@ -86,13 +86,13 @@ class IndexController
             var_dump($errorCode, 2222);
         });
         $producer->send(true);
-        $response->withContent('');
+        return $response->json('');
     }
 
     /**
      * @RequestMapping(route="consumeKafka")
      */
-    public function consumeKafka()
+    public function consumeKafka(Response $response): Response
     {
         $config = \Kafka\ConsumerConfig::getInstance();
         $config->setMetadataRefreshIntervalMs(10000);
@@ -105,5 +105,6 @@ class IndexController
         $consumer->start(function($topic, $part, $message) {
             var_dump($message);
         });
+        return $response->json($data);
     }
 }
