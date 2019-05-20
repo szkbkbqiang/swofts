@@ -83,7 +83,7 @@ class IndexController
             var_dump($result, 111);
         });
         $producer->error(function($errorCode) {
-            var_dump($errorCode, 2222);
+            var_dump($errorCode . "---222");
         });
         $producer->send(true);
         return $response->json('');
