@@ -80,10 +80,10 @@ class IndexController
         );
 
         $producer->success(function($result) {
-            var_dump($result);
+            var_dump($result, 111);
         });
         $producer->error(function($errorCode) {
-            var_dump($errorCode);
+            var_dump($errorCode, 2222);
         });
         $producer->send(true);
     }
