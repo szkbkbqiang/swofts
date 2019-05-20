@@ -142,8 +142,6 @@ class SyncProcess
         $sendData = array();
         $broker = \Kafka\Broker::getInstance();
         $topicInfos = $broker->getTopics();
-        var_dump($topicInfos);
-        var_dump($data);
         foreach ($data as $value) {
             if (!isset($value['topic']) || !trim($value['topic'])) {
                 continue;
