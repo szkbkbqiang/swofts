@@ -168,7 +168,9 @@ class SyncProcess
             } else {
                 $partId = $value['partId'];
             }
-            var_dump($topicInfos, $topicMeta);
+            var_dump($topicInfos);
+            var_dump("------------");
+            var_dump($topicMeta);
             $brokerId = $topicMeta[$partId];
             $topicData = array();
             if (isset($sendData[$brokerId][$value['topic']])) {
