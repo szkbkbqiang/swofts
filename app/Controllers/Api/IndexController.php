@@ -86,6 +86,7 @@ class IndexController
             var_dump($errorCode, 2222);
         });
         $producer->send(true);
+        $response->withContent('');
     }
 
     /**
